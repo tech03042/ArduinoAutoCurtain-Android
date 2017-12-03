@@ -87,10 +87,14 @@ class MainActivity : AppCompatActivity() {
 //            }
 //        }
         btn_up.setOnClickListener { view ->
+            if (!switchAutoMode.isChecked)
+                switchAutoMode.isChecked = true
             sendFunction(4)
         }
 
         btn_down.setOnClickListener { view ->
+            if (!switchAutoMode.isChecked)
+                switchAutoMode.isChecked = true
             sendFunction(5)
         }
 
@@ -115,6 +119,8 @@ class MainActivity : AppCompatActivity() {
             sendFunction(if (b) 0 else 1)
         }
         btn_stop.setOnClickListener { view ->
+            if (!switchAutoMode.isChecked)
+                switchAutoMode.isChecked = true
             sendFunction(7)
         }
     }
@@ -194,7 +200,7 @@ class MainActivity : AppCompatActivity() {
                     if (writeBuffer.size > 0) {
                         outputStream.write((writeBuffer[0].toInt()))
                         outputStream.flush()
-                        
+
                         Log.d("Writing", writeBuffer[0].toString())
                         writeBuffer.removeAt(0)
                     }
