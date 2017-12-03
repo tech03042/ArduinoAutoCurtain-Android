@@ -22,6 +22,7 @@ import java.util.*
 import android.os.SystemClock
 import android.util.Log
 import android.view.MotionEvent
+import android.view.View
 import android.widget.SeekBar
 import android.widget.Switch
 import kotlin.collections.ArrayList
@@ -81,22 +82,37 @@ class MainActivity : AppCompatActivity() {
         btn_init.setOnClickListener { view ->
             sendFunction(6)
         }
-//        btn_up.setOnTouchListener { view, motionEvent ->
-//            when(motionEvent.action){
-//                MotionEvent.ACTION_DOWN -> writeBuffer(4)
-//            }
-//        }
-        btn_up.setOnClickListener { view ->
-            if (!switchAutoMode.isChecked)
-                switchAutoMode.isChecked = true
-            sendFunction(4)
-        }
+        btn_up.setOnTouchListener(object : View.OnTouchListener {
+            override fun onTouch(p0: View?, p1: MotionEvent?): Boolean {
+                when (p1!!.action) {
+                    MotionEvent.ACTION_DOWN -> {
+                        if (!switchAutoMode.isChecked)
+                            switchAutoMode.isChecked = true
+                        p0!!.performClick()
+                        sendFunction(4)
+                    }
+                    MotionEvent.ACTION_UP -> sendFunction(7)
+                }
 
-        btn_down.setOnClickListener { view ->
-            if (!switchAutoMode.isChecked)
-                switchAutoMode.isChecked = true
-            sendFunction(5)
-        }
+                return false
+            }
+        })
+
+        btn_down.setOnTouchListener(object : View.OnTouchListener {
+            override fun onTouch(p0: View?, p1: MotionEvent?): Boolean {
+                when (p1!!.action) {
+                    MotionEvent.ACTION_DOWN -> {
+                        if (!switchAutoMode.isChecked)
+                            switchAutoMode.isChecked = true
+                        p0!!.performClick()
+                        sendFunction(5)
+                    }
+                    MotionEvent.ACTION_UP -> sendFunction(7)
+                }
+
+                return false
+            }
+        })
 
         switchSoundMode.setOnCheckedChangeListener { compoundButton, b ->
             sendFunction(if (b) 3 else 2)
