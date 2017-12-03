@@ -1,7 +1,7 @@
 # ArduinoAutoCurtain-Android
 호서대학교 컴퓨터공학과 2학년 2학기, 컴퓨터구조2, 아두이노 자동 커튼 제어 프로젝트
 
-![구동 스크린샷 이미지](https://raw.githubusercontent.com/tech03042/ArduinoAutoCurtain-Android/master/Screenshot.png)
+![구동 스크린샷 이미지](https://raw.githubusercontent.com/tech03042/ArduinoAutoCurtain-Android/master/Screenshot_378x672.png)
 
 ##### 안드로이드 -> 아두이노 전송 데이터 ( Byte )
 데이터 | 기능
