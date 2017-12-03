@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="30dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="kr.co.lemming.arduinoautocurtain.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DEV FUNCTION" />
+
+    <Button
+        android:id="@+id/btn_init"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Initialize" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="기기 연결 상태 : " />
+
+
+        <TextView
+            android:id="@+id/txtConnected"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Not connected" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btConnectNewDevice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="새로운 연결 생성" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="자동/수동" />
+
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/switchAutoMode"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="모터속도" />
+
+
+        <android.support.v7.widget.AppCompatSeekBar
+            android:id="@+id/sliderSpeed"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="150"
+            android:progress="75" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="소리사용" />
+
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/switchSoundMode"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="false" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:text="수동 조작\n* 수동 조작시 자동모드에서 수동으로 자동 변경됩니다." />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+
+        <ImageButton
+            android:id="@+id/btn_up"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/default_button"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_arrow_upward_white_48dp" />
+
+        <ImageButton
+            android:id="@+id/btn_stop"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/default_button"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_block_white_48dp" />
+
+
+        <ImageButton
+            android:id="@+id/btn_down"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/default_button"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_arrow_downward_white_48dp" />
+    </LinearLayout>
+
+
+</LinearLayout>
